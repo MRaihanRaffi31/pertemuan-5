@@ -11,6 +11,6 @@ class Mahasiswa {
   }
 }
 
-let mhs = new Mahasiswa("Raihan", 24004, 2024);
+let mhs = new Mahasiswa("Raihan", 2405176004, 2024);
 
 mainText.innerText = mhs.perkenalan();
