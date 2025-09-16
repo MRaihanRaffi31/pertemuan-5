@@ -18,4 +18,5 @@ class Bank {
 }
 let bank = new Bank("Rehan", 1000000);
 bank.Deposit(500000);
+bank.tarik(2000000);
 mainText.innerHTML = `Nama: ${bank.nama} <br> Saldo: ${bank.saldo}`;
