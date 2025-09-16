@@ -17,11 +17,12 @@ class Bank {
                     
         }
         cekSaldo() {
-            return`Nama: ${this.nama} \n Saldo: ${this.saldo}`;
+            return`Nama: ${this.nama} \n 
+            Sisa Saldo: ${this.saldo}`;
         }       
     }
 
 let bank = new Bank("Rehan", 1000000);
 bank.Deposit(500000);
 bank.tarik(2000000);
-mainText.innerHTML = `Nama: ${bank.nama} <br> Saldo: ${bank.saldo}`;
+mainText.innerHTML = `Nama: ${bank.nama}\n  Sisa Saldo: ${bank.cekSaldo()}`;
