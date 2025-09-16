@@ -7,7 +7,7 @@ class Mahasiswa {
   }
 
   perkenalan() {
-    return `Halo, nama saya ${this.nama}, nim saya ${this.nim}, angkatan ${this.angkatan}`;
+    return `Halo, nama saya ${this.nama}\n nim saya ${this.nim}\n angkatan ${this.angkatan}\n`;
   }
 }
 
