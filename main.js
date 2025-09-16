@@ -1,2 +1,2 @@
 const mainText = document.getElementById("main-text");
-mainText.innerHTML = "Halo Pendikom";
+mainText.innerHTML = "Halo Pendikom FKIP UNMUL";
