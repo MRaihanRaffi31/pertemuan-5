@@ -9,5 +9,5 @@ class Mahasiswa {
   }
 }
 
-let mhs1 = new Mahasiswa("Raihan", "2405176004", 2024);
-mainText.innerText = mhs1.nama;
+let mhs = new Mahasiswa("Raihan", "2405176004", 2024);
+mainText.innerText = mhs.nama;
