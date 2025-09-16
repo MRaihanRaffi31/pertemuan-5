@@ -1,13 +1,12 @@
 const mainText = document.getElementById("main-text");
-mainText.innerHTML = "Halo Pendikom FKIP UNMUL";
-
 class Mahasiswa {
-  constructor(nama, nim, jurusan) {
+  constructor(nama, nim, angkatan) {
     this.nama = nama;
     this.nim = nim;
     this.angkatan = angkatan;
   }
 }
 
-let mhs = new Mahasiswa("Raihan", "2405176004", 2024);
+let mhs = new Mahasiswa("Raihan", 24004, 2024);
+
 mainText.innerText = mhs.nama;
