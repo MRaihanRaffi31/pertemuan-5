@@ -5,8 +5,12 @@ class Mahasiswa {
     this.nim = nim;
     this.angkatan = angkatan;
   }
+
+  perkenalan() {
+    return `Halo, nama saya ${this.nama}, nim saya ${this.nim}, angkatan ${this.angkatan}`;
+  }
 }
 
 let mhs = new Mahasiswa("Raihan", 24004, 2024);
 
-mainText.innerText = mhs.nama;
+mainText.innerText = mhs.perkenalan();
