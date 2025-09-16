@@ -1,16 +1,14 @@
 const mainText = document.getElementById("main-text");
-class Mahasiswa {
-  constructor(nama, nim, angkatan) {
-    this.nama = nama;
-    this.nim = nim;
-    this.angkatan = angkatan;
-  }
+class Bank {
+    constructor(nama, saldo) {
+        this.nama = nama;
+        this.saldo = saldo;
+    }
 
-  perkenalan() {
-    return `Halo, nama saya ${this.nama}\n nim saya ${this.nim}\n angkatan ${this.angkatan}\n`;
-  }
+    Deposit(jumlah_uang) {
+        this.saldo = this.saldo +  jumlah_uang;
+    }
 }
-
-let mhs = new Mahasiswa("Raihan", 2405176004, 2024);
-
-mainText.innerText = mhs.perkenalan();
+let bank = new Bank("Rehan", 1000000);
+bank.Deposit(500000);
+mainText.innerHTML = `Nama: ${bank.nama} <br> Saldo: ${bank.saldo}`;
