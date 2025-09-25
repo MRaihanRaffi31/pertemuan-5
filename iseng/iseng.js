@@ -1,64 +1,44 @@
-// Kelas Mahasiswa
-class Mahasiswa {
-  constructor(nama, nim, jurusan) {
-    this.nama = nama;
-    this.nim = nim;
-    this.jurusan = jurusan;
+const mainText = document.getElementById("main-text");
+
+class Film {
+  constructor(judul, jam) {
+    this.judul = judul;
+    this.jam = jam;
   }
 
   info() {
-    return `${this.nama} (${this.nim}) - Jurusan ${this.jurusan}`;
+    return `Judul: ${this.judul} <br> Jam Tayang: ${this.jam}`;
   }
 }
 
-// Kelas Universitas
-class Universitas {
+class Bioskop {
   constructor(nama) {
     this.nama = nama;
-    this.mahasiswa = [];
+    this.daftarFilm = [];
   }
 
-  tambahMahasiswa(m) {
-    this.mahasiswa.push(m);
+  tambahFilm(film) {
+    this.daftarFilm.push(film);
   }
 
-  tampilkanMahasiswa() {
-    return this.mahasiswa.map(m => m.info());
+  tampilkanFilm() {
+    if (this.daftarFilm.length === 0) {
+      return `Belum ada film di ${this.nama}`;
+    }
+    let teks = `Bioskop: ${this.nama} <br><br>`;
+    this.daftarFilm.forEach((film, i) => {
+      teks += `Film ${i + 1}: <br>${film.info()} <br><br>`;
+    });
+    return teks;
   }
 }
 
-// Buat objek universitas
-const univ = new Universitas("Universitas Contoh");
+// contoh penggunaan
+let bioskop = new Bioskop("Bioskop XXI");
 
-// Fungsi dipanggil saat klik tombol tambah
-function tambahMahasiswa() {
-  const nama = document.getElementById("nama").value;
-  const nim = document.getElementById("nim").value;
-  const jurusan = document.getElementById("jurusan").value;
+// tambahkan film
+bioskop.tambahFilm(new Film("Laskar Bintang", "19:00"));
+bioskop.tambahFilm(new Film("Malam di Kota", "21:00"));
 
-  if (!nama || !nim || !jurusan) {
-    alert("Harap isi semua data!");
-    return;
-  }
-
-  const mhs = new Mahasiswa(nama, nim, jurusan);
-  univ.tambahMahasiswa(mhs);
-  tampilkan();
-
-  // reset input
-  document.getElementById("nama").value = "";
-  document.getElementById("nim").value = "";
-  document.getElementById("jurusan").value = "";
-}
-
-// Tampilkan daftar mahasiswa
-function tampilkan() {
-  const daftarDiv = document.getElementById("daftar");
-  daftarDiv.innerHTML = "";
-  univ.tampilkanMahasiswa().forEach(info => {
-    const div = document.createElement("div");
-    div.className = "card";
-    div.textContent = info;
-    daftarDiv.appendChild(div);
-  });
-}
+// tampilkan di halaman
+mainText.innerHTML = bioskop.tampilkanFilm();
