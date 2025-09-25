@@ -2,8 +2,8 @@ const mainText = document.getElementById("main-text");
 
 // Daftar film sederhana
 const daftarFilm = [
-  { judul: "Laskar Bintang", jam: "19:00" },
-  { judul: "Malam di Kota", jam: "21:00" }
+  { judul: "Laskar Bintang", jam: "19:00 WITA" },
+  { judul: "Malam di Kota", jam: "21:00 WITA" }
 ];
 
 // Tampilkan daftar film
