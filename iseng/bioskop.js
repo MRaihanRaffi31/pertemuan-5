@@ -2,8 +2,8 @@ const mainText = document.getElementById("main-text");
 
 class Film {
   constructor(judul, harga, kursi) {
-    this.judul = judul;
-    this.harga = harga;
+    this.judul = judul; // judul film
+    this.harga = harga; // harga tiket
     this.kursi = kursi; // jumlah kursi tersedia
   }
 
@@ -39,7 +39,7 @@ class Bioskop {
   }
 }
 
-// contoh penggunaan
+// contoh penggunaan kelas Bioskop dan Film
 let bioskop = new Bioskop("XXI Samarinda");
 let film1 = new Film("Avengers", 50000, 50);
 let film2 = new Film("Spiderman", 45000, 30);
@@ -47,8 +47,10 @@ let film2 = new Film("Spiderman", 45000, 30);
 bioskop.tambahFilm(film1);
 bioskop.tambahFilm(film2);
 
-// pesan 5 tiket film Avengers
-film1.pesanTiket(5);
+// pemesanan tiket bioskop
+film1.pesanTiket(30);
+film2.pesanTiket(29);
 
 // tampilkan daftar film
 mainText.innerHTML = bioskop.tampilkanFilm();
+
