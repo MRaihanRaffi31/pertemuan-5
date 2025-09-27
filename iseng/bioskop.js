@@ -1,15 +1,54 @@
 const mainText = document.getElementById("main-text");
 
-// Daftar film sederhana
-const daftarFilm = [
-  { judul: "Laskar Bintang", jam: "19:00 WITA" },
-  { judul: "Malam di Kota", jam: "21:00 WITA" }
-];
+class Film {
+  constructor(judul, harga, kursi) {
+    this.judul = judul;
+    this.harga = harga;
+    this.kursi = kursi; // jumlah kursi tersedia
+  }
 
-// Tampilkan daftar film
-let teks = "<h2>Daftar Film</h2>";
-daftarFilm.forEach((film, i) => {
-  teks += `Film ${i + 1}: ${film.judul} (Jam: ${film.jam})<br>`;
-});
+  pesanTiket(jumlah) {
+    if (jumlah > this.kursi) {
+      alert("Kursi tidak cukup!");
+    } else {
+      this.kursi -= jumlah;
+    }
+  }
 
-mainText.innerHTML = teks;
+  cekFilm() {
+    return `Judul: ${this.judul} <br> Harga: Rp${this.harga} <br> Kursi Tersedia: ${this.kursi}`;
+  }
+}
+
+class Bioskop {
+  constructor(nama) {
+    this.nama = nama;
+    this.daftarFilm = [];
+  }
+
+  tambahFilm(film) {
+    this.daftarFilm.push(film);
+  }
+
+  tampilkanFilm() {
+    let info = `<h2>${this.nama}</h2>`;
+    this.daftarFilm.forEach(film => {
+      info += `<p>${film.cekFilm()}</p>`;
+    });
+    return info;
+  }
+}
+
+// contoh penggunaan
+let bioskop = new Bioskop("XXI Samarinda");
+let film1 = new Film("Avengers", 50000, 50);
+let film2 = new Film("Spiderman", 45000, 30);
+
+bioskop.tambahFilm(film1);
+bioskop.tambahFilm(film2);
+
+// pesan 5 tiket film Avengers
+film1.pesanTiket(5);
+
+// tampilkan daftar film
+mainText.innerHTML = bioskop.tampilkanFilm();
