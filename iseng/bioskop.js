@@ -42,12 +42,12 @@ class Bioskop {
 // contoh penggunaan kelas Bioskop dan Film
 let bioskop = new Bioskop("XXI Samarinda");
 let film1 = new Film("Avengers", 50000, 50);
-let film2 = new Film("Spiderman", 45000, 30);
+let film2 = new Film("Spiderman", 45000, 50);
 
 bioskop.tambahFilm(film1);
 bioskop.tambahFilm(film2);
 
-// pemesanan tiket bioskop
+// pemesanan tiket bioskop (per 1 orang)
 film1.pesanTiket(30);
 film2.pesanTiket(29);
 
